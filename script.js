@@ -26,6 +26,8 @@ const noteTitle = document.getElementById('noteTitle');
 const noteContent = document.getElementById('noteContent');
 const saveNote = document.getElementById('saveNote');
 const newNote = document.getElementById('newNote');
+const editnote = document.getElementById('editnote');
+const deletenote = document.getElementById('deletenote');
 
 // Theme Management
 let currentTheme = localStorage.getItem('theme') || 'light';
