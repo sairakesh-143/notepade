@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Notepad</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="light-mode">
+    <div class="theme-toggle">
+        <button id="themeToggle">🌙</button>
+    </div>
+
+    <!-- Auth Forms -->
+    <div id="authForms">
+        <div class="auth-container">
+            <div class="tabs">
+                <button class="tab active" data-form="loginForm">Login</button>
+                <button class="tab" data-form="signupForm">Sign Up</button>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="signupForm" class="auth-form hidden">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app" class="hidden">
+        <header>
+            <h1>My Notes</h1>
+            <button id="logoutBtn">Logout</button>
+        </header>
+
+        <div class="notes-container">
+            <div class="notes-list" id="notesList">
+                <!-- Notes will be dynamically added here -->
+            </div>
+
+            <div class="note-editor">
+                <input type="text" id="noteTitle" placeholder="Note Title">
+                <textarea id="noteContent" placeholder="Write your note here..."></textarea>
+                <div class="editor-buttons">
+                    <button id="saveNote">Save</button>
+                    <button id="newNote">New Note</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
